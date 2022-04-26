@@ -6,6 +6,8 @@ server.use(express.json()); // Função para servidor receber informações json
 
 const cursos = ['FullStack Master', 'Desenvolvimento de Games', 'HTML5', 'CSS'];
 
+//CRUD --> Create, Read, Update, Delete
+
 //  retorna um curso
 server.get('/cursos/:index', (req, res) => {
     const { index } = req.params;
