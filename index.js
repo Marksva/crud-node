@@ -26,9 +26,28 @@ server.post('/cursos', (req, res) => {
     cursos.push(name);
 
     return res.json(cursos);
+});
+
+
+// Atualizar curso
+server.put('/cursos/:index', (req, res) => {
+    const { index } = req.params;
+    const { name } = req.body;
+
+    cursos[index] = name;
+
+    return res.json(cursos);
+});
+
+
+//deletar um curso
+server.delete('/cursos/:index', (req, res) => {
+    const { index } = req.params;
+
+
+    cursos.splice(index, 1); // função do proprio js 
+    return res.json({message : "O curso foi deletado"});
 })
-
-
 
 
 
