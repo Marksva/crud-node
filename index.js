@@ -25,7 +25,7 @@ server.get('/cursos', (req, res) => {
 // Criar um novo curso
 server.post('/cursos', (req, res) => {
     const { name } = req.body;
-    cursos.push(name);
+    cursos.push(name); // adicionando string usando função push do js
 
     return res.json(cursos);
 });
@@ -47,7 +47,7 @@ server.delete('/cursos/:index', (req, res) => {
     const { index } = req.params;
 
 
-    cursos.splice(index, 1); // função do proprio js 
+    cursos.splice(index, 1); // função do proprio  para deletar js 
     return res.json({message : "O curso foi deletado"});
 })
 
